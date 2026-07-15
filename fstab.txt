@@ -1,0 +1,3 @@
+/dev/mmcblk1p1   /mnt/harvester-sd   exfat   defaults,nofail,uid=1000,gid=1000,umask=000   0 0
+
+/dev/mmcblk0p3   /mnt/harvester-sd   exfat   defaults,nofail,uid=1000,gid=1000,umask=000   0 0

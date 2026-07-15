@@ -1,0 +1,15 @@
+[Unit]
+Description=Harvester SD card watcher (repair folders/config if missing)
+After=local-fs.target harvester-msc.service
+Wants=local-fs.target
+
+[Service]
+Type=simple
+# Run as root so it can unbind gadget and remount RW when needed
+ExecStart=/usr/bin/env python3 /home/radxa/harvester_watcher.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+

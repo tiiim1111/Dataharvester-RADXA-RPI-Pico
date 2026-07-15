@@ -1,0 +1,15 @@
+[Unit]
+Description=USB Mass Storage Gadget (PC RW, Radxa RO)
+After=local-fs.target sys-kernel-config.mount
+Wants=sys-kernel-config
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/env python3 /home/radxa/scripts/harvester_msc.py
+# Unbind on stop so the PC releases the drive
+ExecStop=/bin/sh -c 'G=/sys/kernel/config/usb_gadget/harvester_msc; [ -e "$G/UDC" ] && echo > "$G/UDC" || true'
+RemainAfterExit=yes
+TimeoutStartSec=40s
+
+[Install]
+WantedBy=multi-user.target

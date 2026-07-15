@@ -1,0 +1,12 @@
+[Unit]
+Description=Mount SD Card at /mnt/harvester-sd (RO)
+After=harvester-msc.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/env python3 /home/radxa/harvester_mnt.py
+RemainAfterExit=yes
+TimeoutStartSec=20s
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,9 @@
+# /etc/systemd/system/harvester-settings-visibility.service
+[Unit]
+Description=Toggle visibility of 'settings' folder on the SD (via FAT attributes)
+After=harvester-msc.service
+Wants=harvester-msc.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /home/radxa/harvester_settings_visibility.py

@@ -1,0 +1,12 @@
+[Unit]
+Description=Apply Wi-Fi from config.json to NetworkManager
+Wants=network-pre.target NetworkManager.service
+After=network-pre.target NetworkManager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /home/radxa/scripts/set_wifi_nm_from_config.py
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,19 @@
+[Unit]
+Description=Publish harvester presence to MQTT (retry until success, then exit)
+Wants=network-online.target
+After=network-online.target
+RequiresMountsFor=/mnt/harvester-sd
+
+[Service]
+Type=simple
+User=root
+Group=root
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/env python3 /home/radxa/scripts/harvester_present.py
+# We WANT it to stop after success (your script exits 0), so don't always restart.
+Restart=on-failure
+RestartSec=5
+Nice=5
+
+[Install]
+WantedBy=multi-user.target

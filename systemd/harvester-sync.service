@@ -1,0 +1,21 @@
+[Unit]
+Description=Harvester continuous rsync to server
+Wants=network-online.target harvester-mnt.service
+After=network-online.target harvester-mnt.service
+# If you don't use harvester-mnt.service, it's fine—this unit will still run and your script will retry.
+RequiresMountsFor=/mnt/harvester-sd
+
+[Service]
+Type=simple
+User=root
+Group=root
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/env python3 /home/radxa/harvester_sync.py
+Restart=always
+RestartSec=3
+KillSignal=SIGINT
+TimeoutStopSec=15
+Nice=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,22 @@
+{
+  "name": "ai-agent-crash-course",
+  "version": "1.0.0",
+  "description": "Zero-to-hero crash course project for building a simple local AI agent with Node.js and Ollama.",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "check": "node --check src/index.js && node --check src/agent.js && node --check src/config.js"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "ollama",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^17.4.1"
+  }
+}

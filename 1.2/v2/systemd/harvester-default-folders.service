@@ -1,0 +1,11 @@
+[Unit]
+Description=Apply default folders and config
+After=local-fs.target harvester-msc.service
+Requires=harvester-msc.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/env python3 /home/radxa/scripts/harvester_msc_default_folders.py
+
+[Install]
+WantedBy=multi-user.target

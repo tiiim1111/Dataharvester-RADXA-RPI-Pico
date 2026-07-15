@@ -1,0 +1,10 @@
+# /etc/systemd/system/harvester-settings-visibility.path
+[Unit]
+Description=Watch for /mnt/harvester-sd/config_enable.txt changes
+
+[Path]
+PathChanged=/mnt/harvester-sd/config_enable.txt
+Unit=harvester-settings-visibility.service
+
+[Install]
+WantedBy=multi-user.target

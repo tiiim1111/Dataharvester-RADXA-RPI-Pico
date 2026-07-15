@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.*
+*.log
+*.tmp
+*.exe
+*.msi
+*.zip
+*.7z
+*.rar
+__pycache__/
+*.py[cod]

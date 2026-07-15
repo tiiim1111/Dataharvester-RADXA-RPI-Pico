@@ -1,0 +1,3 @@
+Python Scripts: /home/radxa/<>
+Services: /etc/systemd/system/<>
+Logs: /var/log/harvester$

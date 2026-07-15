@@ -1,0 +1,28 @@
+sudo apt update
+sudo apt install -y \
+  network-manager nmcli \
+  rsync sshpass openssh-client \
+  inotify-tools \
+  python3-paho-mqtt \
+  kmod util-linux iproute2 \
+  exfatprogs
+
+
+sudo systemctl enable --now sys-kernel-config.mount
+
+
+/etc/systemd/system/harvester-msc.service
+[Unit]
+Description=USB Mass Storage Gadget (Harvester MSC)
+After=sys-kernel-config.mount local-fs.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+ExecStart=/usr/bin/env python3 /home/radxa/harvester_msc.py
+
+[Install]
+WantedBy=multi-user.target
+
+

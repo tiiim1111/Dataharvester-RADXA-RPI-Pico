@@ -1,0 +1,51 @@
+{
+  "created_at": "2026-04-03T02:36:16",
+  "device_name": "",
+  "folders": {
+    "cal_log": "Top-level calibration logs",
+    "datalog": "Top-level data logs",
+    "note": "Add folders here and restart (or let watcher apply) to take effect.",
+    "paths": [
+      "cal_log",
+      "datalog",
+      "unclassified",
+      "settings",
+      "settings/logs",
+      "alarms_data"
+    ],
+    "settings": "Configuration & logs for the device",
+    "settings/logs": "Script and device logs",
+    "unclassified": "Auto-sorted files that were at root"
+  },
+  "mqtt_connection": {
+    "host": "MQTT_BROKER_HOST",
+    "password": "MQTT_PASSWORD",
+    "port": 1883,
+    "topic": "USB_DEVICES",
+    "username": "MQTT_USERNAME"
+  },
+  "network": {
+    "gateway": "192.168.0.1",
+    "note": "If using DHCP, leave static_ip, gateway, and subnet blank.",
+    "password": "WIFI_PASSWORD",
+    "ssid": "WIFI_SSID",
+    "static_ip": "192.168.0.184",
+    "subnet": "255.255.0.0"
+  },
+  "server_connection": {
+    "base_dir": "/mnt/devices",
+    "host": "SYNC_SERVER_HOST",
+    "password": "SYNC_SERVER_PASSWORD",
+    "username": "SYNC_SERVER_USERNAME"
+  },
+  "sync": {
+    "auth": {
+      "token": "",
+      "user": ""
+    },
+    "enabled": true,
+    "server_url": "",
+    "source": "/mnt/harvester-sd"
+  },
+  "version": "2.0.0"
+}
