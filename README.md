@@ -1,4 +1,4 @@
-# Dataharvester RADXA/RPI Pico
+# Dataharvester RADXA/RPI Zero
 
 Scripts and service files for a Data Harvester device workflow using a RADXA/Raspberry Pi style Linux host, USB mass-storage gadget mode, mounted SD storage, network setup, MQTT presence, and server-side data sync.
 
